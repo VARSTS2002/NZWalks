@@ -1,4 +1,6 @@
-﻿namespace NZWalks.API.Models.Domain
+﻿using System.Text.Json.Serialization;
+
+namespace NZWalks.API.Models.Domain
 {
     public class Region
     {
@@ -13,6 +15,7 @@
         public long Population { get; set; }
 
         //navigation property
-        public IEnumerable<Walk> Walks { get; set; }
+        [JsonIgnore]
+        public List<Walk> Walks { get; set; }
     }
 }
